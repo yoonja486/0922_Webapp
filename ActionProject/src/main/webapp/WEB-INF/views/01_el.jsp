@@ -124,9 +124,42 @@
 		big과 small이 같습니까? : ${ big == small } 또는 ${ big eq small } <br>
 		big과 10이 같습니까? : ${ big == 10 } 또는 ${ big eq 10 } <br>
 		strOne과 strTwo가 같습니까? : ${ strOne == strTwo }
+		<!-- EL구문에서의 문자열 == 비교는 자바에서의 equals()와 같은 동작을 함 -->
+		strOne에 담긴값과 "안녕"이 일치하나요? : ${ strOne == "안녕" } 또는 ${ strOne == '안녕' } <br>
+		strOne과 strTwo가 같지 않습니까? : ${ strOne != strTwo } 또는 ${ strOne ne strTwo } <br>
+															<!-- ne : not equals -->
 	</p>
 	
+	<hr>
 	
+	<h3>4. 객체가 null인지 또는 리시트가 비어있는 체크</h3>
+	
+	<p>
+		* 기존방식
+		
+		스크립틀릿으로 if()
+		객체 == null
+		리스트.isEmpty()
+	</p>
+	
+	<p>
+		* EL구문
+		
+		obj가 null과 일치합니까?
+		${ obj == null } 또는 ${ obj eq null } 또는 ${ empty obj }
+		
+		list가 비어있습니까? : ${ empty list }
+		list가 비어있지 않습니까? : ${ !empty list }
+	</p>
+	
+	<hr>
+	
+	<h3>5. 논리 연산자</h3>
+	
+	<p>
+		AND 연산 : ${ true && true } 또는 ${ true and true }
+		OR  연산	: ${ true || true } 또는 ${ true or false }
+	</p>
 	
 	
 	
