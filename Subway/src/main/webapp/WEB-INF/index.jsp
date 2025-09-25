@@ -214,7 +214,7 @@
         </div>
         <br>
     </div>
-	<a href='orderList.sandwich'>주문내역보기</a>
+	<a href='orderList.sandwich?value=value'>주문내역보기</a>
 
     <br>
 

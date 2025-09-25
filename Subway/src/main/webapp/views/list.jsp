@@ -3,7 +3,7 @@
 <%@ page import="com.kh.subway.model.vo.Subway, java.util.List" %>
 <%
 	// request.getAttribute("키값") : Object
-	List<subway> orders = request.getAttribute("orders");
+	List<Subway> orders = (List<Subway>request.getAttribute("orders");
 
 %>
 <!DOCTYPE html>
@@ -53,7 +53,7 @@
 				
 				<% for(Subway s : orders) { %>
 					<tr>
-						<td><%= s.getName() %></td>
+						<td width="130"><%= s.getName() %></td>
 						<td><%= s.getPhone() %></td>
 						<td><%= s.getAdderss() %></td>
 						<td><%= s.getRequest() %></td>
@@ -71,12 +71,3 @@
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

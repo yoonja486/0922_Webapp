@@ -48,7 +48,7 @@
 		채소 : <%= order.getVegetable() %><br>
 		소스 : <%= order.getSauce() %><br>
 		쿠키 : <%= order.getCookie() %><br>
-		결제 방식 : <%= order.getpayment() %><br><br>
+		결제 방식 : <%= order.getPayment() %><br><br>
 		
 		위와 같이 주문하시겠습니까? <br><br>
 		
