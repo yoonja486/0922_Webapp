@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="petMapper">
+  
+  	<select id="login" resultType="com.kh.java.pet.model.vo.Pet" parameterType="com.kh.java.pet.model.vo.Pet">
+ 		SELECT
+ 			   USER_NO 
+		     , USER_ID
+			 , USER_PWD
+		     , USER_NAME
+	         , NICKNAME 
+			 , PHONE 
+		     , ADDRESS
+		     , EMAIL
+			 , BREED 
+			 , PET_NAME
+		     , GENDER 
+		     , BIRTH_DATE
+		     , POINT
+		  FROM
+		       TB_PET
+		 WHERE
+		       USER_ID = #{userId}
+		   AND
+		       USER_PWD = #{userPwd}
+  	</select>
+  	
+  	<insert id="signUp">
+  	
+  	
+  	</insert>
+  	
+  
+  </mapper>
