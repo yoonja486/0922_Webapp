@@ -15,9 +15,11 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="com.kh.java.member.model.service.MemberService"/>
     <fullyQualifiedTypeName name="com.kh.java.member.model.dao.MemberDao"/>
-    <fullyQualifiedTypeName name="com.kh.java.common.Template"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.jdbc.SQL"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="com.kh.java.member.model.vo.Member"/>
+    <fullyQualifiedTypeName name="com.kh.java.pet.model.service.PetService"/>
+    <fullyQualifiedTypeName name="com.kh.java.pet.model.dao.PetDao"/>
+    <fullyQualifiedTypeName name="com.kh.java.common.Template"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

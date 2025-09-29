@@ -20,7 +20,7 @@
 	
 	<jsp:include page="../include/header.jsp" />
 	
-	<h1>$ { msg }</h1>
+	<h1>로그인에 실패했습니다.</h1>
 	
 	<jsp:include page="../include/footer.jsp" />
 	
