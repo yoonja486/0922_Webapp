@@ -1,0 +1,50 @@
+Web의 3요소
+-- HTML, CSS, JS 3요소를 합쳐질 때 엄청 중요해짐!!
+
+● HTML : 화면을 보여줄때 값, 정보들을 알려줌 / 구조를 먼저 잡아줌
+
+● CSS  : HTML로 만든 구조를 예쁘게 만들려고 한다 할때 쓴다. <style>을 이용해서 꾸며준다.
+
+● JS(Java Script)★★  : HTML, CSS 조작하는 용도로 사용하겠다.
+			<h1>문서의 제목<h1>을 제목이라고 바꾸고 싶다를 요소를 변경하겠다 할때 JS를 사용한다.
+			<h1 id="first"> (h1요소의 id속성) 이라고 하고 (="first" id의 first 속성 값) 이라고 한다.
+● document : html요소의 모든 정보를 갖고있는 객체
+● getElementById : id 속성값이 first인 요소를 바꾸고 싶다.
+● innerText : 요소 안쪽부분을 바꾸고 싶다.
+
+-- 엄청 중요한 <form> 태그 : 사용자에게 값을 입력받아야 한다. input요소는 항상 form태그 안에 있어야 한다.
+   action에 적은 속성에 input에 적용한 속성값을 전달해줘야 한다.
+   값을 넘겨줄때는 무조건 name 속성을 필수로 적어서 input 요소에 속성값을 뽑아서 쓸 수 있게 만든다.
+   action은 로그인이야, 회원가입이야, 넘겨주고 내맘대로 지정할 수 있음
+   action에 적은 이름을 서블릿이랑 똑같이 잘 적어줘야한다.
+
+<html>
+<head>
+	<title>하이</title>
+	<style>
+		h1{
+			font-size : 48px;
+			color : red;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1 id="first">문서의 제목</h1>
+	
+	<script>
+		document.getElementById("first").innerText = '제목'; 
+	</script>
+
+	<header>문서의 머리 부분
+		<ul>
+			<li>목록에 보여질 정보</li>
+			<li>목록에 보여질 정보</li>
+		</ul>
+	</header>
+
+	<img src="이미지경로" />
+
+</body>
+</html>
