@@ -298,7 +298,7 @@
   	
   	<insert id="insertImageBoard" parameterType="com.kh.java.board.model.vo.Board">
   		<selectKey resultType="long" keyProperty="boardNo" order="BEFORE">
-  			SELECT SEQ_BNO.NEXTVAL FROM KH_BOARD
+  			SELECT SEQ_BNO.NEXTVAL FROM DUAL
   		</selectKey>
   		INSERT
   		  INTO
@@ -315,9 +315,26 @@
   			   #{boardNo}
   			 , 2
   			 , #{boardTitle}
-  			 , #[boardContent}
+  			 , #{boardContent}
   			 , #{boardWriter}
   			   )
+  	</insert>
+  	
+  	<insert id="insertAttachmentList" parameterType="com.kh.java.common.vo.Attachment">
+  		INSERT
+  		  INTO
+  		       KH_ATTACHMENT
+  		VALUES
+  		   	   (
+  		   	   SEQ_FNO.NEXTVAL
+  		   	 , #{refBno}
+  		   	 , #{originName}
+  		   	 , #{changename}
+  		   	 , #{filePath}
+  		   	 , SYSDATE
+  		   	 , #{fileLevel}
+  		   	 , 'Y'
+  		   	   )
   	</insert>
   	
   </mapper>

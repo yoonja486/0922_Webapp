@@ -92,10 +92,18 @@ public class ImageInsertController extends HttpServlet {
 					files.add(at);
 					
 				}
-				// 요청 처리
-				new BoardService().insertImage(board, files);
-				
 			}
+				// 요청 처리
+				int result = new BoardService().insertImage(board, files);
+				
+				if(result > 0) {
+					
+					response.sendRedirect(request.getContextPath() + "/images");
+				} else {
+					request.setAttribute("msg", "게시글 작성 실패");
+					request.getRequestDispatcher("/WEB-INF/views/common/result_page.jsp").forward(request, response);
+					
+				}
 		}
 	}
 

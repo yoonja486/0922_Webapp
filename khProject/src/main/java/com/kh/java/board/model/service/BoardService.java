@@ -205,12 +205,30 @@ public class BoardService {
 			if(result > 0) {
 				
 				// 첨부파일 개수만큼 INSERT
+				for(Attachment file : files) {
+					file.setRefBno(board.getBoardNo());
+					
+					result = bd.insertAttachmentList(sqlSession, file);
+					
+					if(result == 0) {
+						break;
+					}
+				}
 			}
 			
+			// 3. 다 성공했으면 commit
+			if(result > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
 		} catch(Exception e) {
-			
+			sqlSession.rollback();
+			e.printStackTrace();
+			result = 0;
+		} finally {
+			sqlSession.close();
 		}
-		
 		return result;
 	}
 	
