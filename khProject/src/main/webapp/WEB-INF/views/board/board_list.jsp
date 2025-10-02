@@ -72,11 +72,29 @@ tr:hover{
                     </tr>    
 	       		  </c:forEach>
                   </tbody>
-                  
-               </table>               
+               </table>
+        <div id="search-area" class="form-group">
+			<form action="search.board" method="get">
+			<select name="condition" class="form-control">
+				<option value="writer">작성자</option>
+				<option value="content">내용</option>
+				<option value="title">제목</option>
+			</select>
+				<input type="text" name="query" class="form-control" value="${ keyword }"/>
+				<input type="hidden" name="page" value="1" />
+				<button type="submit" class="btn btn-block" style="background:#52b1ff; color:white">검색</button>
+			</form>
+	     </div>
             </div>
        </div>
    </div> 
+   		<c:if test="${ not empty condition }">
+   		<script>
+   			$(function() {
+   				${'#search-area option[value=${condition}]'}.attr('selected', true);
+   			})
+   		</script>
+   		</c:if>
             <script>
             	$(function() {
 				
@@ -86,7 +104,6 @@ tr:hover{
             			const targetId = e.currentTarget.id;
             			location.href = `detail.board?boardNo=\${targetId}`;
             		});
-            		
             	});
             </script>           
          <div class="paging-area" align="center" >
@@ -102,9 +119,18 @@ tr:hover{
 	       		</c:if>
 	       		
 	       		<c:forEach var="i" begin="${ pi.startPage }" end="${ pi.endPage }">
+	       		<c:choose>
+	       		<c:when test="${ not empty condition }">
+	       		 <button 
+                class="btn btn-outline-primary" style="color:#52b1ff;"
+                onclick="location.href='search.boards?page=${i}&condition=${condition}&query=${keyword}'">${i}</button>
+	       		</c:when>
+	       		<c:otherwise>
                 <button 
                 class="btn btn-outline-primary" style="color:#52b1ff;"
                 onclick="location.href='boards?page=${i}'">${i}</button>
+               	</c:otherwise>
+                </c:choose>
                 </c:forEach>
 	        	
 	        	<c:if test="${ pi.currentPage ne pi.maxPage }">		
